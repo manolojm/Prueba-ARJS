@@ -39,9 +39,10 @@
 
         var modelo = document.createElement('a-box');
         modelo.setAttribute('material', 'color:yellow');
-        modelo.setAttribute('scale', '30 30 30');
+        modelo.setAttribute('scale', '2 2 2');
         modelo.setAttribute('gps-entity-place', `latitude: ${latitud}; longitude: ${longitud};`);
 
+        var scene = document.querySelector('a-scene');
         scene.appendChild(modelo);
     }
   
