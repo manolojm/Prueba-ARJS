@@ -13,7 +13,7 @@
     <div id="mensaje" style="border: 1px solid black;"></div>
 
     <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-camera gps-camera rotation-reader></a-camera>
+    <a-camera gps-camera rotation-reader look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1'></a-camera>
       
         <!--<a-assets>
             <video id="penguin-sledding" autoplay loop="true" src="https://youtu.be/hEtSAOkjKVI"></video>
@@ -38,6 +38,10 @@
             div.innerHTML = "Hola mundo";
             console.log("patata");
         });
+
+        var div = document.getElementById('mensaje');
+        div.innerHTML = "Hola mundo";
+        console.log("patata");
         cargarModelos();
     }
 
