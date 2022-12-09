@@ -10,7 +10,7 @@
   </head>
 
   <body style="margin: 0; overflow: hidden;">
-    <div id="mensaje" style="border: 1px solid black; color: red; text-align: center;"></div>
+    <div id="mensaje" style="border: 1px solid black; color: red; backgroundcolor: white; text-align: center;"></div>
 
     <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1'></a-camera>
@@ -48,20 +48,16 @@
     function cargarModelos(){
         var modelos = [
             {
-                latitud: 37.192249,
-                longitud: -3.616615,
-                color: "yellow",
-                coso: "a-box"
+                latitud: 37.192262,
+                longitud: -3.616535,
             },
             {
                 latitud: 37.192246, 
-                longitud: -3.616596,
-                color: "red",
-                coso: "a-cylinder"
-            },
+                longitud: -3.616596
+            },/*
             {
-                latitud: 37.192262,
-                longitud: -3.616535,
+                latitud: 37.192249,
+                longitud: -3.616615,
                 color: "blue",
                 coso: "a-octahedron"
             },
@@ -76,15 +72,26 @@
                 longitud: -3.616582,
                 color: "white",
                 coso: "a-sphere"
-            }
+            }*/
         ];
 
-        
         for (var i = 0; i < modelos.length; i++){
-            var modelo = document.createElement(modelos[i].coso);
-            modelo.setAttribute('material', 'color:' + modelos[i].color);
-            modelo.setAttribute('scale', '0.5 0.5 0.5');
-            modelo.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+            var texto = document.createElement("a-text");
+            texto.setAttribute('value', 'Me gustan las patatas');
+            texto.setAttribute('scale', '0.5 0.5 0.5');
+            texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+
+            var imagen = document.createElement("a-imagen");
+            texto.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
+            texto.setAttribute('scale', '0.5 0.5 0.5');
+            video.setAttribute('position', '90 0 0');
+            texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+
+            var video = document.createElement("a-video");
+            video.setAttribute('src', 'https://youtu.be/qZ1H-e8Z-LY');
+            video.setAttribute('scale', '0.5 0.5 0.5');
+            video.setAttribute('position', '90 0 0');
+            video.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
             var scene = document.querySelector('a-scene');
             scene.appendChild(modelo);
