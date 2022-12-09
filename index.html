@@ -15,9 +15,9 @@
     <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
       
-        <a-assets>
+        <!--<a-assets>
             <video id="penguin-sledding" autoplay loop="true" src="https://youtu.be/hEtSAOkjKVI"></video>
-        </a-assets>
+        </a-assets>-->
 
         <!-- Using the asset management system. -->
         <!-- <a-video src="#penguin-sledding" width="4" height="2.25" gps-entity-place="latitude: 37.192249; longitude: -3.616615;" rotation="0 0 -20"></a-video> -->
@@ -33,7 +33,7 @@
     window.onload = ()=>
     {
         var camara = document.querySelector('a-camera');
-        camara.addEventLister("gps-camera-update-position", ()=>{
+        camara.addEventListener("gps-camera-update-position", ()=>{
             var div = document.getElementById('mensaje');
             div.innetHTML = "Hola mundo";
         });
