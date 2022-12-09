@@ -10,6 +10,8 @@
   </head>
 
   <body style="margin: 0; overflow: hidden;">
+    <div id="mensaje" style="border: 1px solid black;"></div>
+
     <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
     <a-camera gps-camera rotation-reader></a-camera>
       
@@ -30,6 +32,11 @@
   
     window.onload = ()=>
     {
+        var camara = document.querySelector('a-camera');
+        camara.addEventLister("gps-camera-update-position", ()=>{
+            var div = document.getElementById('mensaje');
+            div.innetHTML = "Hola mundo";
+        });
         cargarModelos();
     }
 
