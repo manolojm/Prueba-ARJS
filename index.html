@@ -27,7 +27,7 @@
     </a-scene>
   </body>
 
-  <script src="modelosARJS.js"></script>
+  <!-- <script src="modelosARJS.js"></script> -->
   <script>
   
     window.onload = ()=>
@@ -35,7 +35,8 @@
         var camara = document.querySelector('a-camera');
         camara.addEventListener("gps-camera-update-position", ()=>{
             var div = document.getElementById('mensaje');
-            div.innetHTML = "Hola mundo";
+            div.innerHTML = "Hola mundo";
+            console.log("patata");
         });
         cargarModelos();
     }
