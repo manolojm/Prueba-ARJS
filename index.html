@@ -82,10 +82,10 @@
             texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
             var imagen = document.createElement("a-imagen");
-            texto.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
-            texto.setAttribute('scale', '0.5 0.5 0.5');
-            video.setAttribute('position', '90 0 0');
-            texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+            imagen.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
+            imagen.setAttribute('scale', '0.5 0.5 0.5');
+            imagen.setAttribute('position', '90 0 0');
+            imagen.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
             var video = document.createElement("a-video");
             video.setAttribute('src', 'https://youtu.be/qZ1H-e8Z-LY');
