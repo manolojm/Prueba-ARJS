@@ -27,6 +27,19 @@
                     muted
                     playsinline
                 ></video>
+
+                <video
+                    src="assets/asset.mp4"
+                    preload="auto"
+                    id="vid2"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline
+                ></video>
             </a-assets>
 
                 <a-video
@@ -42,6 +55,21 @@
                     autoplay="false"
                     scale="1 1 1"
                     gps-entity-place="latitude: 37.1769083762478; longitude: -3.6096735922008776;"
+                ></a-video>
+
+                <a-video
+                    src="#vid2"
+                    position='0 0.1 0'
+                    rotation="-90 0 0"
+                    look-at="[gps-camera]"
+                    videohandler
+                    smooth="true"
+                    smoothCount="10"
+                    smoothTolerance="0.01"
+                    smoothThreshold="5"
+                    autoplay="false"
+                    scale="1 1 1"
+                    gps-entity-place="latitude: 37.17692814454119; longitude: -3.6097728339296027;"
                 ></a-video>
 
             <a-camera gps-camera rotation-reader></a-camera>
