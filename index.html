@@ -1,76 +1,83 @@
-<!doctype html>
+﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-        <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-        <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>GeoAR.js demo</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+  </head>
 
-    <body style="margin: 0; overflow: hidden;">
-        <a-scene
-            embedded
-            loading-screen="enabled: false;"
-            arjs="sourceType: webcam; debugUIEnabled: false;"
-        >
-            <a-assets>
-                <video
-                    src="assets/asset.mp4"
-                    preload="auto"
-                    id="vid"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    playsinline
-                ></video>
+  <body style="margin: 0; overflow: hidden;">
 
-                <video
-                    src="assets/asset.mp4"
-                    preload="auto"
-                    id="vid2"
-                    response-type="arraybuffer"
-                    loop
-                    crossorigin
-                    webkit-playsinline
-                    autoplay
-                    playsinline
-                ></video>
-            </a-assets>
+    <!-- <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+    <a-camera gps-camera rotation-reader look-controls-enabled='false' arjs-look-controls='smoothingFactor: 0.1'></a-camera> -->
 
-                <a-video
-                    src="#vid"
-                    position='0 0.1 0'
-                    rotation="-90 0 0"
-                    look-at="[gps-camera]"
-                    videohandler
-                    smooth="true"
-                    smoothCount="10"
-                    smoothTolerance="0.01"
-                    smoothThreshold="5"
-                    autoplay="true"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 37.1769083762478; longitude: -3.6096735922008776;"
-                ></a-video>
+    <a-scene embedded loading-screen="enabled: false;" arjs="sourceType: webcam; debugUIEnabled: false;">
+        <a-camera gps-camera rotation-reader></a-camera>
+    </a-scene>
+  </body>
 
-                <a-video
-                    src="#vid2"
-                    position='0 0.1 0'
-                    rotation="-90 0 0"
-                    look-at="[gps-camera]"
-                    videohandler
-                    smooth="true"
-                    smoothCount="10"
-                    smoothTolerance="0.01"
-                    smoothThreshold="5"
-                    autoplay="false"
-                    scale="1 1 1"
-                    gps-entity-place="latitude: 37.17692814454119; longitude: -3.6097728339296027;"
-                ></a-video>
+  <script>
 
-            <a-camera gps-camera rotation-reader></a-camera>
-        </a-scene>
-    </body>
+    function cargarModelos(){
+        var modelos = [
+            {
+                latitud: 37.192262,
+                longitud: -3.616535
+            },
+            {
+                latitud: 37.192246, 
+                longitud: -3.616596
+            },
+            {
+                latitud: 37.192249,
+                longitud: -3.616615
+            },
+            {
+                latitud: 37.192196, 
+                longitud: -3.616572
+            },
+            {
+                latitud: 37.192235, 
+                longitud: -3.616582
+            }
+        ];
+
+        // Nuestra escena
+        var scene = document.querySelector('a-scene');
+
+        for (var i = 0; i < modelos.length; i++){
+            
+            // Nuestro texto
+            var texto = document.createElement("a-text");
+            texto.setAttribute('value', 'Me gustan las patatas');
+            texto.setAttribute('scale', '0.5 0.5 0.5');
+            texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+
+            scene.appendChild(texto);
+
+            // Nuestra imagen
+            var imagen = document.createElement("a-imagen");
+            imagen.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
+            imagen.setAttribute('scale', '0.5 0.5 0.5');
+            imagen.setAttribute('position', '90 0 0');
+            imagen.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+
+            scene.appendChild(imagen);
+
+            // Nuestro video
+            /*var video = document.createElement("a-video");
+            video.setAttribute('src', 'https://youtu.be/qZ1H-e8Z-LY');
+            video.setAttribute('scale', '0.5 0.5 0.5');
+            video.setAttribute('position', '90 0 0');
+            video.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+
+            scene.appendChild(video);*/
+        }
+    }
+  
+  </script>
+
 </html>
