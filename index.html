@@ -56,21 +56,21 @@
         for (var i = 0; i < modelos.length; i++){
             
             // Nuestro texto
-            var texto = document.createElement("a-text");
+            /*var texto = document.createElement("a-text");
             texto.setAttribute('value', 'Me gustan las patatas');
             texto.setAttribute('scale', '0.5 0.5 0.5');
             texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
-            scene.appendChild(texto);
+            scene.appendChild(texto);*/
 
             // Nuestra imagen
-            var imagen = document.createElement("a-imagen");
+            /*var imagen = document.createElement("a-imagen");
             imagen.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
             imagen.setAttribute('scale', '0.5 0.5 0.5');
             imagen.setAttribute('position', '90 0 0');
             imagen.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
-            scene.appendChild(imagen);
+            scene.appendChild(imagen);*/
 
             // Nuestro video
             /*var video = document.createElement("a-video");
@@ -80,6 +80,13 @@
             video.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
             scene.appendChild(video);*/
+
+            var modelo = document.createElement("a-sphere");
+            modelo.setAttribute('material', 'color:' + "red");
+            modelo.setAttribute('scale', '0.5 0.5 0.5');
+            modelo.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
+            var scene = document.querySelector('a-scene');
+            scene.appendChild(modelo);
         }
     }
   
