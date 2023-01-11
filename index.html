@@ -56,12 +56,12 @@
         for (var i = 0; i < modelos.length; i++){
             
             // Nuestro texto
-            /*var texto = document.createElement("a-text");
+            var texto = document.createElement("a-text");
             texto.setAttribute('value', 'Me gustan las patatas');
-            texto.setAttribute('scale', '0.5 0.5 0.5');
+            texto.setAttribute('scale', '1 1 1');
             texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
-            scene.appendChild(texto);*/
+            scene.appendChild(texto);
 
             // Nuestra imagen
             /*var imagen = document.createElement("a-imagen");
@@ -81,11 +81,12 @@
 
             scene.appendChild(video);*/
 
+            // Nuestra esfera
             var modelo = document.createElement("a-sphere");
             modelo.setAttribute('material', 'color:' + "red");
             modelo.setAttribute('scale', '0.5 0.5 0.5');
             modelo.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
-            var scene = document.querySelector('a-scene');
+
             scene.appendChild(modelo);
         }
     }
