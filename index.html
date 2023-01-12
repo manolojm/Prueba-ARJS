@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿﻿<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -41,12 +41,16 @@
                 longitud: -3.616615
             },
             {
-                latitud: 37.192196, 
-                longitud: -3.616572
+                //latitud: 37.192196, 
+                //longitud: -3.616572
+                latitud: 37.17692814454119,
+                longitud: -3.6097728339296027
             },
             {
-                latitud: 37.192235, 
-                longitud: -3.616582
+                //latitud: 37.192235, 
+                //longitud: -3.616582
+                latitud: 37.1769083762478,
+                longitud: -3.6096735922008776
             }
         ];
 
@@ -69,7 +73,6 @@
             imagen.setAttribute('scale', '0.5 0.5 0.5');
             imagen.setAttribute('position', '90 0 0');
             imagen.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
-
             scene.appendChild(imagen);*/
 
             // Nuestro video
@@ -78,7 +81,6 @@
             video.setAttribute('scale', '0.5 0.5 0.5');
             video.setAttribute('position', '90 0 0');
             video.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
-
             scene.appendChild(video);*/
 
             // Nuestra esfera
