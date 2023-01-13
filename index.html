@@ -31,33 +31,43 @@
             {
                 latitud: 37.192262,
                 longitud: -3.616535,
-                coso: "a-cylinder"
+                texto: "Monumento 1",
+                imagen: 'https://www.alhambra.org/img/banner-index2.jpg',
+                video: 'videos/suerte.mp4'
             },
             {
                 latitud: 37.192246, 
                 longitud: -3.616596,
-                coso: "a-cylinder"
+                texto: "Monumento 2",
+                imagen: 'https://www.alhambra.org/img/banner-index2.jpg',
+                video: 'videos/suerte.mp4'
             },
             {
-                //latitud: 37.192249,
-                //longitud: -3.616615
-                latitud: 37.176995, 
-                longitud: -3.609922,
-                coso: "a-triangle"
+                latitud: 37.192249,
+                longitud: -3.616615
+                //latitud: 37.176995, 
+                //longitud: -3.609922,
+                texto: "Monumento 3",
+                imagen: 'https://www.alhambra.org/img/banner-index2.jpg',
+                video: 'videos/suerte.mp4'
             },
             {
-                //latitud: 37.192196, 
-                //longitud: -3.616572
-                latitud: 37.176995, 
-                longitud: -3.609922,
-                coso: "a-sphere"
+                latitud: 37.192196, 
+                longitud: -3.616572
+                //latitud: 37.176995, 
+                //longitud: -3.609922,
+                texto: "Monumento 4",
+                imagen: 'https://www.alhambra.org/img/banner-index2.jpg',
+                video: 'videos/suerte.mp4'
             },
             {
-                //latitud: 37.192235, 
-                //longitud: -3.616582
-                latitud: 37.176796, 
-                longitud: -3.609781,
-                coso: "a-cylinder"
+                latitud: 37.192235, 
+                longitud: -3.616582
+                //latitud: 37.176796, 
+                //longitud: -3.609781,
+                texto: "Monumento 5",
+                imagen: 'https://www.alhambra.org/img/banner-index2.jpg',
+                video: 'videos/suerte.mp4'
             }
         ];
 
@@ -67,36 +77,37 @@
         for (var i = 0; i < modelos.length; i++){
             
             // Nuestro texto
-            var texto = document.createElement("a-text");
-            texto.setAttribute('value', 'Me gustan las patatas');
-            texto.setAttribute('scale', '1 1 1');
+            var texto = document.createElement('a-text');
+            texto.setAttribute('value', `${modelos[i].texto}`);
+            texto.setAttribute('scale', '0.5 0.5 0.5');
+            texto.setAttribute('position', '0 0 -20');
             texto.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
             scene.appendChild(texto);
 
             // Nuestra imagen
-            /*var imagen = document.createElement("a-imagen");
-            imagen.setAttribute('src', 'https://static.wikia.nocookie.net/sao/images/8/88/Asuna_SAO.png/revision/latest?cb=20150125143947&path-prefix=es');
+            var imagen = document.createElement('a-image');
+            imagen.setAttribute('src', `${modelos[i].imagen}`);
             imagen.setAttribute('scale', '0.5 0.5 0.5');
-            imagen.setAttribute('position', '90 0 0');
+            imagen.setAttribute('position', '0 0 -20');
             imagen.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
-            scene.appendChild(imagen);*/
+            scene.appendChild(imagen);
 
             // Nuestro video
-            /*var video = document.createElement("a-video");
-            video.setAttribute('src', 'https://youtu.be/qZ1H-e8Z-LY');
+            var video = document.createElement('a-video');
+            video.setAttribute('src', `${modelos[i].video}`);
             video.setAttribute('scale', '0.5 0.5 0.5');
-            video.setAttribute('position', '90 0 0');
+            video.setAttribute('position', '0 0 -20');
             video.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
-            scene.appendChild(video);*/
+            scene.appendChild(video);
 
             // Nuestra esfera
-            var modelo = document.createElement(`${modelos[i].coso}`);
+            /*var modelo = document.createElement("a-sphere");
             modelo.setAttribute('material', 'color:' + "red");
             modelo.setAttribute('scale', '0.5 0.5 0.5');
             modelo.setAttribute('gps-entity-place', `latitude: ${modelos[i].latitud}; longitude: ${modelos[i].longitud};`);
 
-            scene.appendChild(modelo);
+            scene.appendChild(modelo);*/
         }
     }
   
