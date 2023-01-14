@@ -19,11 +19,15 @@
 
 
         <a-assets>
-            <video id="penguin-sledding" autoplay loop="true" src="videos/suerte.mp4" ></video>
+            <video id="penguin-sledding" src="videos/suerte.mp4" ></video>
         </a-assets>
 
         <!-- Using the asset management system. -->
-        <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20" gps-entity-place="latitude: 37.176971; longitude: -3.609876"></a-video>
+        <div gps-entity-place="latitude: 37.176971; longitude: -3.609876">
+            <button onclick="playPause()">Play/Pause</button> 
+            <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20">
+            </a-video>
+        </div>
     </a-scene>
   </body>
 
