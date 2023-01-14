@@ -19,7 +19,8 @@
 
 
         <a-assets>
-            <video id="penguin-sledding" autoplay muted loop="true" src="videos/suerte.mp4" ></video>
+            <video id="penguin-sledding" autoplay loop="true" src="videos/suerte.mp4" ></video>
+            <img id="my-image" src="videos/monumento.jpg">
         </a-assets>
 
         <!-- Video 1 -->
@@ -27,6 +28,12 @@
 
         <!-- Video 2 -->
         <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20" gps-entity-place="latitude: 37.176608; longitude: -3.609652"></a-video>
+
+        <!-- Imagen 1 -->
+         <a-image src="#my-image" gps-entity-place="latitude: 37.176608; longitude: -3.609652"></a-image>
+
+        <!-- Imagen 2 -->
+        <a-videosphere src="#penguin-sledding" gps-entity-place="latitude: 37.176608; longitude: -3.609652"></a-videosphere>
     </a-scene>
   </body>
 
