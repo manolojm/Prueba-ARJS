@@ -17,16 +17,14 @@
     <a-scene embedded loading-screen="enabled: false;" arjs="sourceType: webcam; debugUIEnabled: false;">
         <a-camera gps-camera rotation-reader></a-camera>
 
-
+        <!-- Using the asset management system. -->
         <a-assets>
             <video id="penguin-sledding" src="videos/suerte.mp4" ></video>
         </a-assets>
 
-        <!-- Using the asset management system. -->
         <div gps-entity-place="latitude: 37.176971; longitude: -3.609876">
             <button onclick="playPause()">Play/Pause</button> 
-            <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20">
-            </a-video>
+            <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video>
         </div>
     </a-scene>
   </body>
@@ -37,6 +35,15 @@
     {
         cargarModelos();
     }
+
+    var myVideo = document.getElementById("penguin-sledding"); 
+
+    function playPause() { 
+      if (myVideo.paused) 
+        myVideo.play(); 
+      else 
+        myVideo.pause(); 
+    } 
 
     function cargarModelos(){
         var modelos = [
